@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+          <!-- Grup Product cost/list price -->
+          <record model="res.group" id="group_product_cost_price">
+              <field name="name">Product Cost Price</field>
+          </record>
+          <record model="res.group" id="group_product_list_price">
+              <field name="name">Product List Price</field>
+          </record>
+
+          <record model="res.user-res.group" id="user_admin_group_product_cost_price">
+              <field name="user" ref="res.user_admin"/>
+              <field name="group" ref="group_product_cost_price"/>
+          </record>
+          <record model="res.user-res.group" id="user_admin_group_product_list_price">
+              <field name="user" ref="res.user_admin"/>
+              <field name="group" ref="group_product_list_price"/>
+          </record>
+
+          <!-- Acces -->
+          <record model="ir.model.access" id="access_product_template">
+              <field name="model" search="[('model', '=', 'product.template')]"/>
+              <field name="perm_read" eval="True"/>
+              <field name="perm_write" eval="True"/>
+              <field name="perm_create" eval="False"/>
+              <field name="perm_delete" eval="True"/>
+          </record>
+          <record model="ir.model.access" id="access_product_template_cost_price">
+              <field name="model" search="[('model', '=', 'product.template')]"/>
+              <field name="group" ref="group_product_cost_price"/>
+              <field name="perm_read" eval="True"/>
+              <field name="perm_write" eval="True"/>
+              <field name="perm_create" eval="True"/>
+              <field name="perm_delete" eval="True"/>
+          </record>
+          <record model="ir.model.access" id="access_product_template_list_price">
+              <field name="model" search="[('model', '=', 'product.template')]"/>
+              <field name="group" ref="group_product_list_price"/>
+              <field name="perm_read" eval="True"/>
+              <field name="perm_write" eval="True"/>
+              <field name="perm_create" eval="True"/>
+              <field name="perm_delete" eval="True"/>
+          </record>
+      </data>
+  </tryton>

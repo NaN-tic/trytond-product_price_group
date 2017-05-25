@@ -1,0 +1,11 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "model:res.group,name:group_product_cost_price"
+msgid "Product Cost Price"
+msgstr "Preu de cost producte"
+
+msgctxt "model:res.group,name:group_product_list_price"
+msgid "Product List Price"
+msgstr "Preu de venta producte"
