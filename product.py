@@ -38,7 +38,6 @@ class Product:
     @classmethod
     def __setup__(cls):
         super(Product, cls).__setup__()
-        print "JUAS JUAS"
 
         # cost price
         invisible_cost_price =  ~Eval('groups', []).contains(
