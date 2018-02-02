@@ -19,5 +19,5 @@ this repository contains the full copyright notices and license terms. -->
               <field name="user" ref="res.user_admin"/>
               <field name="group" ref="group_product_list_price"/>
           </record>
-      </data>
-  </tryton>
+    </data>
+</tryton>
