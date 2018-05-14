@@ -15,20 +15,22 @@ class Template:
         super(Template, cls).__setup__()
 
         # cost price
-        invisible_cost_price = ~Eval('groups', []).contains(
-                Id('product_price_group', 'group_product_cost_price'))
-        if 'invisible' not in cls.cost_price.states:
-            cls.cost_price.states['invisible'] = invisible_cost_price
-        else:
+        invisible_cost_price = ~Id('product_price_group',
+                'group_product_cost_price').in_(
+                Eval('context', {}).get('groups', []))
+        if 'invisible' in cls.cost_price.states:
             cls.cost_price.states['invisible'] &= invisible_cost_price
+        else:
+            cls.cost_price.states['invisible'] = invisible_cost_price
 
         # list price
-        invisible_list_price = ~Eval('groups', []).contains(
-                Id('product_price_group', 'group_product_list_price'))
-        if 'invisible' not in cls.list_price.states:
-            cls.list_price.states['invisible'] = invisible_list_price
-        else:
+        invisible_list_price = ~Id('product_price_group',
+                'group_product_list_price').in_(
+                Eval('context', {}).get('groups', []))
+        if 'invisible' in cls.list_price.states:
             cls.list_price.states['invisible'] &= invisible_list_price
+        else:
+            cls.list_price.states['invisible'] = invisible_list_price
 
 
 class Product:
@@ -40,20 +42,22 @@ class Product:
         super(Product, cls).__setup__()
 
         # cost price
-        invisible_cost_price = ~Eval('groups', []).contains(
-                Id('product_price_group', 'group_product_cost_price'))
-        if 'invisible' not in cls.cost_price.states:
-            cls.cost_price.states['invisible'] = invisible_cost_price
-        else:
+        invisible_cost_price = ~Id('product_price_group',
+                'group_product_cost_price').in_(
+                Eval('context', {}).get('groups', []))
+        if 'invisible' in cls.cost_price.states:
             cls.cost_price.states['invisible'] &= invisible_cost_price
+        else:
+            cls.cost_price.states['invisible'] = invisible_cost_price
 
         # list price
-        invisible_list_price = ~Eval('groups', []).contains(
-                Id('product_price_group', 'group_product_list_price'))
-        if 'invisible' not in cls.list_price.states:
-            cls.list_price.states['invisible'] = invisible_list_price
-        else:
+        invisible_list_price = ~Id('product_price_group',
+                'group_product_list_price').in_(
+                Eval('context', {}).get('groups', []))
+        if 'invisible' in cls.list_price.states:
             cls.list_price.states['invisible'] &= invisible_list_price
+        else:
+            cls.list_price.states['invisible'] = invisible_list_price
 
 
 class ProductSupplier:
