@@ -6,9 +6,8 @@ from trytond.pyson import Id, Eval
 __all__ = ['Template', 'Product', 'ProductSupplier']
 
 
-class Template:
+class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
-    __metaclass__ = PoolMeta
 
     @classmethod
     def __setup__(cls):
@@ -33,9 +32,8 @@ class Template:
             cls.list_price.states['invisible'] = invisible_list_price
 
 
-class Product:
+class Product(metaclass=PoolMeta):
     __name__ = 'product.product'
-    __metaclass__ = PoolMeta
 
     @classmethod
     def __setup__(cls):
@@ -60,9 +58,8 @@ class Product:
             cls.list_price.states['invisible'] = invisible_list_price
 
 
-class ProductSupplier:
+class ProductSupplier(metaclass=PoolMeta):
     __name__ = 'purchase.product_supplier'
-    __metaclass__ = PoolMeta
 
     @classmethod
     def __setup__(cls):
