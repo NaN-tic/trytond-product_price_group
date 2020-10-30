@@ -66,8 +66,9 @@ class ProductSupplier(metaclass=PoolMeta):
         super(ProductSupplier, cls).__setup__()
 
         # supplier prices
-        invisible_prices = ~Eval('groups', []).contains(
-                Id('product_price_group', 'group_product_cost_price'))
+        invisible_prices = ~Id('product_price_group',
+                'group_product_cost_price').in_(
+                Eval('context', {}).get('groups', []))
         if 'invisible' not in cls.prices.states:
             cls.prices.states['invisible'] = invisible_prices
         else:
