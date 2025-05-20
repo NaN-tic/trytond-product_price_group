@@ -9,8 +9,7 @@ from configparser import ConfigParser
 
 MODULE = 'product_price_group'
 PREFIX = 'nantic'
-MODULE2PREFIX = {
-    }
+MODULE2PREFIX = {}
 
 
 def read(fname):
@@ -117,3 +116,4 @@ setup(name='%s_%s' % (PREFIX, MODULE),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
     tests_require=tests_require,
+    )
