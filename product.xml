@@ -11,13 +11,5 @@ this repository contains the full copyright notices and license terms. -->
               <field name="name">Product List Price</field>
           </record>
 
-          <record model="res.user-res.group" id="user_admin_group_product_cost_price">
-              <field name="user" ref="res.user_admin"/>
-              <field name="group" ref="group_product_cost_price"/>
-          </record>
-          <record model="res.user-res.group" id="user_admin_group_product_list_price">
-              <field name="user" ref="res.user_admin"/>
-              <field name="group" ref="group_product_list_price"/>
-          </record>
     </data>
 </tryton>
